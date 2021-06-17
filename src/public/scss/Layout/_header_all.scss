@@ -1,0 +1,64 @@
+// Start header_all
+
+
+// End header_all
+
+// layout chưa các thành phần chung cảu trang web
+
+
+.headerAll {
+
+  z-index: 10;
+  width: 100%;
+  background: linear-gradient(
+    135deg
+    ,#ffabab 0,#ffcdb3 20%,#faffb0 40%,#bdffb3 60%,#b3c8ff 80%,#e4b3ff 100%);
+
+}
+
+
+.line::after {
+  content: "";
+  width: 148px;
+  display: block;
+  height: 4px;
+  background: white; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  box-shadow: 0 0 20px 0 #3A6073;
+
+  /* dùng position bỏ qua hết các padding */
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: all 0.3s linear;
+}
+
+.headerAll {
+  .navbar-nav {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    .nav-link {
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0.25rem;
+        background: white; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        box-shadow: 0 0 20px 0 #3A6073;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        transition: all 0.5s;
+      }
+  
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+
+
+  .active::after {
+    width: 100%;
+  }
+}
