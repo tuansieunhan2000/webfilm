@@ -5,7 +5,7 @@ var session = require('express-session');
 const methordOverride = require("method-override");
 const route = require('./src/routes')
 const data = require('./src/config/connect_db')
-
+const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "src/public")));
 app.use(express.json());
@@ -30,6 +30,6 @@ app.set("views", path.join(__dirname, "src/views" ));
 
 //route(app);
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`Example app listening at http://localhost:`);
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
   });
