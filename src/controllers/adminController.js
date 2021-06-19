@@ -11,7 +11,7 @@ const multer = require("multer")
 class adminController {
     // [GET] /admin/
     index(req, res, next) {
-        let account, products, categories,lenghtP,lenghtC
+        let account, products, categories
         console.log('index');
         console.log(req.session.userId);
         Account
@@ -36,17 +36,10 @@ class adminController {
                        res.redirect('/admin/login')
                    }
                    else{
-                     if(products.length>=0){
-                        lenghtP =products.length;
-                        lenghtC =categories.length;
-                     }else{
-                        lenghtP =0;
-                        lenghtC =0;
-                     }
                     
                     
 
-                    res.render('admin/index',{products,categories,lenghtP,lenghtC})
+                    res.render('admin/index',{products,categories})
                    }
                    
                 })
@@ -449,7 +442,7 @@ updateCategory(req,res,next){
      }
  //-------------------------search 
  search(req, res, next) {
-    let account, products, categories
+    let account, products, categories, lenghtP
     console.log('index');
     console.log(req.session.userId);
     Account
@@ -476,6 +469,7 @@ updateCategory(req,res,next){
                    res.redirect('/admin/login')
                }
                else{
+                lenghtP = products.length
                 res.render('admin/index',{products,categories})
                }
                
