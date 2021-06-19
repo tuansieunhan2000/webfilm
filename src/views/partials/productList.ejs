@@ -15,14 +15,14 @@
                       class="info d-flex justify-content-center align-items-center flex-column position-absolute text-white"
                     >
                   
-                      <a class="d-block mt-3 mb-2 text-white text-decoration-none" style="outline: 1px solid orange; padding :5px" 
-                       id="<%=data.id%>" href="layout/product-detail/?key=<%=data._id%>" >Chi tiết sản phẩm</a
+                      <a class="d-block mt-3 mb-2 text-white text-decoration-none"  
+                       id="<%=data.id%>" href="layout/product-detail/?key=<%=data._id%>" >Xem phim</a
                       >
                       
                     </div>
                   </div>
                   <h4 class="text-center"><%= data.name%></h4>
-                  <p class="text-center">Giá :<%= data.price%> VND</p>
+                  <p class="text-center"><%= data.category.name%> </p>
 
                 </div>
               </div>

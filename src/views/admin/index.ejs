@@ -30,6 +30,7 @@
     
    <div class="page">
     <%-include('../partials/headerAdmin.ejs')%>
+
     <section class="dashboard-counts section-padding">
       <div class="container-fluid">
         <div class="row">
@@ -37,8 +38,8 @@
           <div class="col-xl-6 col-md-6 col-12 d-flex justify-content-center">
             <div class="wrapper count-title d-flex">
               <div class="icon"><i class="fab fa-product-hunt"></i></div>
-              <div class="name"><strong class="text-uppercase">All Product</strong>
-                <div class="count-number  text-center"><%=products.length%></div>
+              <div class="name"><strong class="text-uppercase">All Film</strong>
+                <div class="count-number  text-center"><%=lenghtP%></div>
               </div>
             </div>
           </div>
@@ -46,8 +47,7 @@
           <div class="col-xl-6 col-md-6 col-12 d-flex justify-content-center">
             <div class="wrapper count-title d-flex">
               <div class="icon"><i class="fas fa-store"></i></div>
-              <div class="name"><strong class="text-uppercase">All Category</strong>
-                  
+              <div class="name"><strong class="text-uppercase">All Nation</strong>             
                 <div class="count-number text-center"><%=categories.length%></div>
               </div>
             </div>
@@ -57,16 +57,17 @@
     </section>
 
     <section class="container px-5 table-responsive">
-      <h1>Table products </h1>
+      <h1>Table films </h1>
       <table id="example" class="table table-striped data-table">
         <thead class="thead-dark">
           <tr> 
               <th>STT</th>  
-              <th>name</th>
-              <th>vn_name</th>
-              <th>description</th>
-              <th>category</th>
-              <th>price</th>
+              <th>Name</th>
+              <th>VN_Name</th>
+              <th>Description</th>
+              <th>Nation</th>
+              <th>URL</th>
+              <th>Ending</th>
               <th></th>
               <th></th>
           </tr>
@@ -79,7 +80,9 @@
               <td><%=data.vn_name %></td>
               <td><%=data.description %></td>
               <td><%=data.category.name %></td>
-              <td><%=data.price %></td>
+              <td><%=data.url %></td>
+              <td><%=data.ending %></td>
+
               
               <td>
                 <a title="edit" href="/admin/productDetail/?key=<%= data._id %>"> 

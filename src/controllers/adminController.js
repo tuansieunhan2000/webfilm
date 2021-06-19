@@ -11,7 +11,7 @@ const multer = require("multer")
 class adminController {
     // [GET] /admin/
     index(req, res, next) {
-        let account, products, categories
+        let account, products, categories,lenghtP,lenghtC
         console.log('index');
         console.log(req.session.userId);
         Account
@@ -29,13 +29,24 @@ class adminController {
         })
         .then(()=>{
             Product.find({deletedAt:null})
+            
                 .then(productList=>{
                     products = Object.values(multipleMongooseToObject(productList))
                    if (!account) {
                        res.redirect('/admin/login')
                    }
                    else{
-                    res.render('admin/index',{products,categories})
+                     if(products.length>=0){
+                        lenghtP =products.length;
+                        lenghtC =categories.length;
+                     }else{
+                        lenghtP =0;
+                        lenghtC =0;
+                     }
+                    
+                    
+
+                    res.render('admin/index',{products,categories,lenghtP,lenghtC})
                    }
                    
                 })
@@ -259,16 +270,19 @@ productUpdate(req, res, next) {
                     data = pr
                     data.category.id = getcate.id
                     data.category.name = getcate.name
+                    data.id = req.body.id
                     data.name = req.body.name
                     data.vn_name = req.body.vn_name
-                    data.price = req.body.price
+                    data.ending = req.body.ending
+                    data.url = req.body.url
                     data.description = req.body.description
                     data.image = imgname
+                    
                 })
                 .then(()=>{
-                    // console.log(data)
+                    
                     let newdata = new Product(data)
-                    data.save()
+                    newdata.save()
                     res.redirect("/admin/")
             })
             .catch()

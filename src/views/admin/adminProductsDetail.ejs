@@ -40,22 +40,28 @@
                     <div class="card">
                         <!-- Điền thông tin sản phẩm -->
                       <div class="card-header d-flex align-items-center bg-dark">
-                        <h4 class="text-light">Thông tin sản phẩm</h4>
+                        <h4 class="text-light">Thông tin phim</h4>
                       </div>
                       <div class="card-body row">
 
                         <div class="col-md-4">
                           <img class="card-img-top embed-responsive-item" src="/../img/<%= product.image %>" alt="<%= product.vn_name %>">
                         </div>
-
                         <form class="form-horizontal col-md-8" action="/admin/productUpdate/?_method=PUT" method="POST" enctype="multipart/form-data">
                           <input type="hidden" name="_id" id="_id" value="<%= product._id %>">
+                          <div class="form-group row">
+                            <label class="col-sm-2 form-control-label">ID</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="id" id="id" class="form-control"value="<%= product.id %>">
+                            </div>
+                          </div>
                           <div class="form-group row">
                             <label class="col-sm-2 form-control-label">Tên tiếng việt</label>
                             <div class="col-sm-10">
                               <input type="text" name="vn_name" id="vn_name" class="form-control" value="<%= product.vn_name %>">
                             </div>
                           </div>
+           
                           <div class="form-group row">
                               <label class="col-sm-2 form-control-label">Tên tiếng anh</label>
                               <div class="col-sm-10">
@@ -83,9 +89,15 @@
                               </div>
                             </div>
                             <div class="form-group row">
-                              <label class="col-sm-2 form-control-label">Giá</label>
+                              <label class="col-sm-2 form-control-label">Ending</label>
                               <div class="col-sm-10">
-                                <input type="text" name="price" id="price" class="form-control"value="<%= product.price %>">
+                                <input type="text" name="ending" id="ending" class="form-control"value="<%= product.ending %>">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-2 form-control-label">URL</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="url" id="url" class="form-control"value="<%= product.url %>">
                               </div>
                             </div>
 

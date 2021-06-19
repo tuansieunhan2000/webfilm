@@ -19,17 +19,23 @@
                     
                     <!--  -->
                       <tr>
-                          <td class="title" style = "width: 30%">Tên sản phẩm</td>
+                          <td class="title" style = "width: 30%">Tên phim</td>
                           <td><%=product.vn_name%></td>                     
                       </tr>
+
                       <tr>
-                          <td class="title" style = "width: 30%" >Loại</td>
+                        <td class="title" style = "width: 30%" >Tên tiếng anh</td>
+                        <td><%=product.name%></td>                     
+                    </tr>
+                      <tr>
+                          <td class="title" style = "width: 30%" >Quốc gia</td>
                           <td><%=product.category.name%></td>                 
                       </tr>
                       <tr>
-                          <td  class="title" style = "width: 30%">Giá</td>
-                          <td><%=product.price%> VND</td>                     
+                          <td  class="title" style = "width: 30%">Ending</td>
+                          <td><%=product.ending%> VND</td>                     
                       </tr>
+                      
                       <tr>
                           <td class="title" style = "width: 30%" >Mô tả</td>
                           <td><%=product.description%></td>                     

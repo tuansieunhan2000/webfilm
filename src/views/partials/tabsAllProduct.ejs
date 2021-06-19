@@ -8,12 +8,12 @@
                 <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
                     <a class="nav-link mb-2 shadow active" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="true">
-                        <span class="font-weight-bold small text-uppercase">All Products</span></a>
+                        <span class="font-weight-bold small text-uppercase" style="color:#3a6073;">All Products</span></a>
                         
                     <% var count=0 %> 
                     <%countArrCate.forEach(function(data) { %>
                         <a class="nav-link mb-2 shadow" id="v-<%=data %>-tab" data-toggle="pill" href="#v-<%=data %>" role="tab" aria-controls="v-<%=data %>" aria-selected="false">
-                            <span class="font-weight-bold small text-uppercase"><%= nameArrCate[count]%></span>
+                            <span class="font-weight-bold small text-uppercase" style="color:#3a6073;"><%= nameArrCate[count]%></span>
                         </a>
                         <% count++ %>
                         
@@ -38,8 +38,10 @@
                                     </div>
                                     <div class="content text-center">
                                     <span class="name"><%=data.name%></span>
-                                    <p>Giá :<%=data.price%> VND</p>
-                                    <button class="button"><a href="/layout/product-detail/?key=<%=data._id%>" style="color: white; text-decoration: none ;">Tìm hiểu thêm </a></button>
+                                 
+                                    <p><%=data.category.name%></p>
+
+                                    <button class="button "><a href="/layout/product-detail/?key=<%=data._id%>" style=" text-decoration: none ;color:#3a6073;" >Xem phim </a></button>
                                 </div>
                                 </div>
                             </div>
@@ -63,8 +65,9 @@
                                                 </div>
                                                 <div class="content text-center">
                                                 <span class="name"><%=data.name%></span>
-                                                <p>Giá :/<%=data.price%> VND</p>
-                                                <button class="button"><a href="/layout/product-detail/?key=<%=data._id%>" style="color: white; text-decoration: none ;">Tìm hiểu thêm </a></button>
+                                                <p><%=data.category.name%></p>
+
+                                                <button class="button text-dark"><a href="/layout/product-detail/?key=<%=data._id%>" style="color:#3a6073; text-decoration: none ;">Xem phim</a></button>
                                             </div>
                                             </div>
                                         </div>
@@ -81,3 +84,6 @@
         </div>
     </div>
 </section>
+<style>
+    
+</style>

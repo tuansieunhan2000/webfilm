@@ -121,11 +121,10 @@
         font-size: 1.125rem;
       }
       >button {
+        
         background: linear-gradient(
-					to right,
-					#3a6073,
-					#16222a
-				);
+          135deg
+          ,#ffabab 0,#ffcdb3 20%,#faffb0 40%,#bdffb3 60%,#b3c8ff 80%,#e4b3ff 100%);
         box-shadow: none;
         border-radius: 9999px;
         font-size: 0.75rem;

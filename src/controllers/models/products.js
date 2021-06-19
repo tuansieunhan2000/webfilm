@@ -5,14 +5,14 @@ const productSchema = new mongoose.Schema({
     name: String,
     vn_name: String,
     description: String,
-    price: String,
+    url: String,
     image: String,
     category: {
         id: String,
         name: String
     },
 
-    rate: String,
+    ending: String,
     id: String
 })
 

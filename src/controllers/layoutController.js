@@ -6,8 +6,7 @@ const { multipleMongooseToObject, mongooseToObject } = require("../util/mongoose
 class layoutController{
   
  //     [GET] /layout/products/
- get_all_products(req,res,next){
-   
+ get_all_products(req,res,next){ 
         Product
             .find({detetedAt:null})
             .then(products => {
