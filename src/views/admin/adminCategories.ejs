@@ -60,7 +60,7 @@
                                                         <th>#</th>
                                                         <th>ID</th>
                                                         <th>Cagegory Name</th>
-                                                        <th>VN Name</th>
+                                                        <th></th>
                                                         <th></th>
                                                         <th></th>
                                                     </tr>
@@ -106,9 +106,9 @@
                     <div class="card-body">
                       <form class="form-horizontal" action="/admin/categoryInsert" method="POST">
                         <div class="form-group row">
-                          <label class="col-3 form-control-" name>Tên tiếng việt</label>
+                          <label class="col-3 form-control-" name>ID</label>
                           <div class="col-9">
-                            <input type="text" id="vn_name" name="vn_name" class="form-control">
+                            <input type="text" id="id" name="id" class="form-control">
                           </div>
                         </div>
                         <div class="form-group row">
@@ -160,13 +160,13 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Xóa sản phẩm</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Xóa quốc gia này?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        Bạn muốn xóa Category này ?
+                        Bạn muốn xóa nation này ?
                     </div>
                     <div class="modal-footer">
                         <button type="button" id="btn-delete" class="btn btn-primary">Delete</button>
@@ -196,12 +196,12 @@
                               <input type="text" id="idUp" name="idUp" class="form-control">
                             </div>
                           </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                           <label class="col-3 form-control-label">Tên tiếng việt</label>
                           <div class="col-9">
                             <input type="text" id="vn_nameUp" name="vn_nameUp" class="form-control">
                           </div>
-                        </div>
+                        </div> -->
                         <div class="form-group row">
                             <label class="col-3 form-control-label">Tên tiếng anh</label>
                             <div class="col-9">

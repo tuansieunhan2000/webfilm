@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between align-items-center">
   <div>
-     <span class=" font-weight-bold pr-2 text-white">Hội quán mê phim & truyện Nam Yêu Nam</span>
+     <span class=" font-weight-bold pr-2 text-white title" style="color: #3A6073">Hội quán mê phim & truyện Nam Yêu Nam</span>
   </div>
   <form action="/search?id=#newIn" method="get">
     <div class="form-group d-flex flex-row ">
@@ -15,6 +15,10 @@
 
 
 <style>
+    @media only screen and (max-width: 992px) {
+  .title {
+    display: none;
+  }
   .hover-input :hover{
     color: linear-gradient(
     135deg

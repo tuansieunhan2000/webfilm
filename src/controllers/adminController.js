@@ -192,9 +192,12 @@ class adminController {
                         name:categoryName,
                     },
                     name: req.body.name,
+                    id: req.body.id,
                     vn_name:req.body.vn_name,
                     description: req.body.description,
-                    price: req.body.price,
+                    url: req.body.url,
+                    ending: req.body.ending,
+                    url_second: req.body.url_second,
                     image:file.filename,
                     rate:"",
                     id:newId++
@@ -275,6 +278,8 @@ productUpdate(req, res, next) {
                     data.vn_name = req.body.vn_name
                     data.ending = req.body.ending
                     data.url = req.body.url
+                    data.url_second = req.body.url_second
+
                     data.description = req.body.description
                     data.image = imgname
                     
@@ -306,9 +311,8 @@ insertCategory(req, res, next){
     .then(()=>{
         console.log("newId ->: "+(newId++))
         var add = new Category({
-            name:req.body.name,
-            vn_name: req.body.vn_name,
-            id:newId++
+            name:req.body.name,     
+            id:req.body.id,
         }) //tạo 1 object mới
         // add.id = newId // gán 
         console.log(add)
@@ -336,7 +340,7 @@ updateCategory(req,res,next){
                 dataOld= categories
                 console.log(categories)
                 dataNew.name = req.body.nameUp
-                dataNew.vn_name = req.body.vn_nameUp
+                dataNew.vn_name = req.body.id
                 dataNew.save()
             }
         }).then(()=>{

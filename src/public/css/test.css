@@ -715,72 +715,23 @@ input.transparent-input {
     font-size: 34px; }
 
 /* END CONTACT */
-/* START FOOTER */
-footer {
-  font-size: 14px;
-  font-weight: 500;
-  background: linear-gradient(135deg, #ffabab 0, #ffcdb3 20%, #faffb0 40%, #bdffb3 60%, #b3c8ff 80%, #e4b3ff 100%);
-  padding-top: 50px; }
-  footer h6 {
-    font-size: 16px;
+.page-footer {
+  background: linear-gradient(135deg, #ffabab 0, #ffcdb3 20%, #faffb0 40%, #bdffb3 60%, #b3c8ff 80%, #e4b3ff 100%); }
+  .page-footer h5 {
+    font-size: 18px;
+    color: #3A6073;
     margin: 0;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fff;
-    border: none;
-    padding-bottom: 5px; }
-  footer ul {
-    margin: 0;
-    padding: 0;
-    list-style: none; }
-    footer ul li {
-      color: #fff; }
-      footer ul li a {
-        font-size: 13px;
-        display: inline-block;
-        padding: 3px 0;
-        letter-spacing: 1.5px;
-        color: #fff;
-        text-decoration: none;
-        transition: 0.5s all;
-        font-weight: thin; }
-        footer ul li a i {
-          color: #717171;
-          transition: all 0.5s; }
-        footer ul li a:hover {
-          font-size: 13px;
-          display: inline-block;
-          padding: 3px 0;
-          letter-spacing: 1.5px;
-          color: #fff;
-          text-decoration: none; }
-          footer ul li a:hover i {
-            font-size: 13px;
-            display: inline-block;
-            padding: 3px 0;
-            letter-spacing: 1.5px;
-            color: #fff;
-            text-decoration: none; }
-
-.footer .container .row {
-  border-bottom: #717171 1px solid;
-  padding-bottom: 50px;
-  padding-top: 40px; }
-.footer .copyright {
-  padding-bottom: 20px;
-  padding-top: 20px; }
-  .footer .copyright a {
-    color: #fff; }
-    .footer .copyright a:hover {
-      cursor: pointer;
-      -webkit-transition: all 300ms ease-in-out;
-      -moz-transition: all 300ms ease-in-out;
-      transition: all 300ms ease-in-out;
-      text-decoration: none;
-      color: #ec7532;
-      outline: none;
-      box-shadow: none; }
-
-/* END FOOTER */
+    padding-top: 20px;
+    letter-spacing: 1.7px; }
+  .page-footer .social a {
+    text-decoration: none;
+    color: #3A6073; }
+    .page-footer .social a i {
+      padding: 15px;
+      border-radius: 50%;
+      transition: all 1s; }
+    .page-footer .social a:hover {
+      padding-left: 20px;
+      transition: all 1s; }
 
 /*# sourceMappingURL=test.css.map */

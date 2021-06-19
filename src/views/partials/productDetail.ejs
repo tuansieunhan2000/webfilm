@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-between align-items-center headerproductDetail mb-3" >
       <h3><a href="/">Trang Chủ</a> 
         <i class="fas fa-chevron-right"></i>
-        <a href=""><%=product.category.name%></a> 
+        <a href="/layout/products"><%=product.category.name%></a> 
         <i class="fas fa-chevron-right"></i>
         <a href=""><%=product.name%></a> 
         
@@ -30,7 +30,9 @@
 
             <div class="text-center">
               <button type="button" class="button" style="color: #3a6073; text-decoration: none;" data-toggle="modal" data-target="#myModal"><span>Đánh giá</span></button>
-              <button type="button" class="button" ><span><a href="https://onedrive.live.com/?authkey=%21AK2d5MsK8Io9pXc&id=BE88A92D575502F5%21<%=product.url%>" style="color: #3a6073; text-decoration: none;">Xem phim</a></span></button>
+              <button type="button" class="button" ><span><a href="https://onedrive.live.com/?authkey=%21AK2d5MsK8Io9pXc&id=BE88A92D575502F5%21<%=product.url%>" style="color: #3a6073; text-decoration: none;">Link 1</a></span></button>
+              <button type="button" class="button" ><span><a href="<%=product.url_second%>" style="color: #3a6073; text-decoration: none;">Link 2</a></span></button>
+
 
             </div>
             
