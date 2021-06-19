@@ -30,6 +30,6 @@ app.set("views", path.join(__dirname, "views" ));
 
 //route(app);
 
-app.listen(port, () => {
+app.listen(process.env.POST|| port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
   });
