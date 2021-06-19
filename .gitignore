@@ -5,7 +5,10 @@ bin-release/
 [Bb]in/
 
 node_modules/
-
+./node_modules
+/node_modules
+../node_modules
+node_modules
 # Other files and folders
 .settings/
 
