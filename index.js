@@ -21,12 +21,20 @@ app.use(session({
   secret: 'somesecret', 
   cookie: { maxAge: 1000*60*60 }}));
 
-data.connect()
+data.connect();
+app.get('/donggop', function (req, res) {
+  res.render('donate')
+})
+app.get('/nguon', function (req, res) {
+  res.render('trangnguon')
+})
 route(app)
 
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src/views" ));
+
+
 
 //route(app);
 

@@ -8,6 +8,7 @@ function route(app){
    app.use('/admin/',adminRouter)
    app.use('/layout/', layoutRouter)
    app.use('/',siteRouter);
+  
     
 
 }

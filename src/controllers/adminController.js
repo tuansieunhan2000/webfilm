@@ -469,7 +469,7 @@ updateCategory(req,res,next){
                    res.redirect('/admin/login')
                }
                else{
-                lenghtP = products.length
+               
                 res.render('admin/index',{products,categories})
                }
                
