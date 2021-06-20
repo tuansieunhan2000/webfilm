@@ -209,6 +209,26 @@ input.transparent-input {
   height: auto;
   background-position: center center;
   background-size: cover; }
+.slider .carousel-inner .item-4 {
+  background-image: url("./img/slide/slide_3.jpeg");
+  height: auto;
+  background-position: center center;
+  background-size: cover; }
+.slider .carousel-inner .item-5 {
+  background-image: url("./img/slide/slide_3.jpeg");
+  height: auto;
+  background-position: center center;
+  background-size: cover; }
+.slider .carousel-inner .item-6 {
+  background-image: url("./img/slide/slide_3.jpeg");
+  height: auto;
+  background-position: center center;
+  background-size: cover; }
+.slider .carousel-inner .item-7 {
+  background-image: url("./img/slide/slide_3.jpeg");
+  height: auto;
+  background-position: center center;
+  background-size: cover; }
 .slider .carousel-inner .carousel-item::before {
   content: "";
   width: 100%;
