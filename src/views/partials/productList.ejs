@@ -1,13 +1,13 @@
 <section class="new">
     <div class="container">
       <h1 ><a id="newIn">MY MENU</a></h1>
-      <div class="row">
+      <div class="row list-wrapper">
         
         <% if(products.length==0){%>
           <div class="mb-5">Không tìm thấy sản phẩm nào!</div>
           <%} else{%>
             <%products.forEach(function(data) { %>
-              <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="col-md-3 col-sm-6 col-xs-12 list-item">
                 <div class="item mb-5">
                   <div class="img position-relative overflow-hidden content-hover">
                     <img class="w-100" src="/./img/<%= data.image %>" />
@@ -27,8 +27,73 @@
                 </div>
               </div>
               <% }); %>
-
         <%}%>   
       </div>
+      <div id="pagination-container" style=" display: block;"></div>
+
     </div>
   </section>
+  <style>
+
+
+.simple-pagination ul {
+	margin: 0 0 20px;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+
+.simple-pagination li {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.simple-pagination li a,
+.simple-pagination li span {
+	color: #666;
+	padding: 5px 10px;
+	text-decoration: none;
+	border: 1px solid #EEE;
+	background-color: #FFF;
+	box-shadow: 0px 0px 10px 0px #EEE;
+}
+
+.simple-pagination .current {
+	color: #3A6073;
+  background: linear-gradient(230deg, rgba(245,159,159,1) 0%, rgba(247,193,155,1) 19%, rgba(255,254,148,1) 39%, rgba(171,246,155,1) 60%, rgba(143,245,255,1) 81%, rgba(228,147,227,1) 100%);
+font-weight: 600;
+}
+
+.simple-pagination .prev.current,
+.simple-pagination .next.current {
+
+color: #3A6073;
+font-weight: 600;
+
+
+}
+.pagination-container{
+ 
+}
+  </style>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.simplePagination.js"></script>
+  <script>
+    var items = $(".list-wrapper .list-item");
+    var numItems = items.length;
+    var perPage = 20;
+
+    items.slice(perPage).hide();
+
+    $('#pagination-container').pagination({
+        items: numItems,
+        itemsOnPage: perPage,
+        prevText: "&laquo;",
+        nextText: "&raquo;",
+        onPageClick: function (pageNumber) {
+            var showFrom = perPage * (pageNumber - 1);
+            var showTo = showFrom + perPage;
+            items.hide().slice(showFrom, showTo).show();
+        }
+    });
+  </script>
