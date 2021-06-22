@@ -93,7 +93,7 @@ class adminController {
 
     // [GET] /admin/login
     showlogin(req,res,next){
-        res.render('admin/login',{message:"Well come to Admin! If you are my crush,you can Login :))))"})
+        res.render('admin/login',{message:"Welcome to Admin! If you are my darling,you can Login :))))"})
     }
     
     login(req, res, next) {
@@ -190,6 +190,8 @@ class adminController {
                     description: req.body.description,
                     url: req.body.url,
                     ending: req.body.ending,
+                    year: req.body.year,
+
                     url_second: req.body.url_second,
                     image:file.filename,
                     rate:"",
@@ -272,6 +274,7 @@ productUpdate(req, res, next) {
                     data.ending = req.body.ending
                     data.url = req.body.url
                     data.url_second = req.body.url_second
+                    data.year = req.body.year
 
                     data.description = req.body.description
                     data.image = imgname
