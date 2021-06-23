@@ -9,6 +9,9 @@ const layoutController = require('../controllers/layoutController')
 router.get('/product-detail?:key', layoutController.show_detail)
 router.post('/product-detail?:key', layoutController.comment)
 router.get('/products', layoutController.get_all_products)
+router.get('/products/decrease', layoutController.get_all_products_sort_by_decrease)
+router.get('/products/increase', layoutController.get_all_products_sort_by_increase)
+router.get('/products/year', layoutController.get_all_products_sort_by_year)
 router.get('/:slug', layoutController.error)
 
 

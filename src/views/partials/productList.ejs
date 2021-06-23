@@ -1,6 +1,13 @@
 <section class="new">
     <div class="container">
       <h1 ><a id="newIn">MY MENU</a></h1>
+      <div class="mb-2  sort-item"> <span class="text-sort">Sắp xếp theo </span>
+        <button class="btn btn-sort"><a href="/sortByNameA_Z">Từ A-Z</a> </button>
+        <button class="btn btn-sort"><a href="/sortByNameZ_A">Từ Z-A</a></button>
+        <button class="btn btn-sort"><a href="/sortByYear">Mới Nhất</a> </button>
+
+      </div>
+     
       <div class="row list-wrapper">
         
         <% if(products.length==0){%>
@@ -72,9 +79,52 @@ font-weight: 600;
 
 
 }
-.pagination-container{
- 
-}
+
+.btn-sort {
+      box-shadow: none;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 300;
+        letter-spacing: 3px;
+        transition: 0.6s all;
+        opacity: 0.8;
+        margin: 0px 10px 0 10px;
+        background: #FFF;
+        transition: background 0.5s ease;
+   
+      }
+      .btn-sort:hover{
+        background: linear-gradient(230deg, rgba(245,159,159,1) 0%, rgba(247,193,155,1) 19%, rgba(255,254,148,1) 39%, rgba(171,246,155,1) 60%, rgba(143,245,255,1) 81%, rgba(228,147,227,1) 100%);
+        transition:  0.5s linear;
+        opacity: 1;
+        
+      }
+      .btn-sort a {
+        color:#3a6073;
+           font-size: 16px;
+           text-decoration: none;
+           font-weight: 500;
+        transition:  0.5s linear;
+           
+        }
+        .btn-sort a:hover {
+           opacity: 0.8;
+           text-decoration: none;
+        transition:  0.5s linear;
+           
+        }
+
+        .sort-item{
+          text-align: right;
+        }
+        @media (max-width: 600px ) { 
+          .sort-item{
+          text-align: center;
+        }
+          .text-sort{
+            display: none;
+          }
+         }
   </style>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/jquery.simplePagination.js"></script>

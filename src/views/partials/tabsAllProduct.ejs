@@ -1,5 +1,5 @@
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery.simplePagination.js"></script>
+<script type="text/javascript" src="/../js/jquery.min.js"></script>
+<script type="text/javascript" src="/../js/jquery.simplePagination.js"></script>
 <section class="py-3 allProduct">
 
     <div class="container py-4">
@@ -28,13 +28,19 @@
                     <!--  -->
                     <div class="tab-pane fade shadow rounded bg-white show active p-4" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
                         <h4 class="font-italic mb-4">List Films</h4>
+                        <div class="mb-2  sort-item"> <span class="text-sort">Sắp xếp theo </span>
+                            <button class="btn btn-sort"><a href="/layout/products/decrease">Từ A-Z</a> </button>
+                            <button class="btn btn-sort"><a href="/layout/products/increase">Từ Z-A</a></button>
+                            <button class="btn btn-sort"><a href="/layout/products/year">Mới Nhất</a> </button>
+                    
+                          </div>
                         <div class="row list-wrapper">
                             <%products.forEach(function(data) { %>
 
                             <div class="col-lg-4 col-sm-6 col-xs-12 list-item">
                                 <div class="item" href="#">
                                     <div class="img-hover-zoom " >  
-                                          <img src="../img/<%=data.image%>" class="w-80" alt="This zooms-in really well and smooth">
+                                          <img src="/../img/<%=data.image%>" class="w-80" alt="This zooms-in really well and smooth">
                                     </div>
                                     <div class="content text-center">
                                     <span class="name"><%=data.name%></span>
@@ -54,6 +60,7 @@
                          
                         <div class="tab-pane fade shadow rounded bg-white p-4" id="v-<%=elementArrCate%>" role="tabpanel" aria-labelledby="v-<%=elementArrCate%>-tab">
                             <h4 class="font-italic mb-4"><%= nameArrCate[count]%></h4>
+                            
                             <div class="row ">
 
                                 <%products.forEach(function(data) { %>
@@ -62,7 +69,7 @@
                                         <div class="col-lg-4 col-sm-6 col-xs-12 ">
                                             <div class="item" href="#">
                                                 <div class="img-hover-zoom " >  
-                                                    <img src="../img/<%=data.image%>" class="w-80" alt="This zooms-in really well and smooth">
+                                                    <img src="/../img/<%=data.image%>" class="w-80" alt="This zooms-in really well and smooth">
                                                 </div>
                                                 <div class="content text-center">
                                                 <span class="name"><%=data.name%></span>
@@ -128,6 +135,51 @@
     
     
     }
+    .btn-sort {
+      box-shadow: none;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 300;
+        letter-spacing: 3px;
+        transition: 0.6s all;
+        opacity: 0.8;
+        margin: 0px 10px 0 10px;
+        background: #FFF;
+        transition: background 0.5s ease;
+   
+      }
+      .btn-sort:hover{
+        background: linear-gradient(230deg, rgba(245,159,159,1) 0%, rgba(247,193,155,1) 19%, rgba(255,254,148,1) 39%, rgba(171,246,155,1) 60%, rgba(143,245,255,1) 81%, rgba(228,147,227,1) 100%);
+        transition:  0.5s linear;
+        opacity: 1;
+        
+      }
+      .btn-sort a {
+        color:#3a6073;
+           font-size: 16px;
+           text-decoration: none;
+           font-weight: 500;
+        transition:  0.5s linear;
+           
+        }
+        .btn-sort a:hover {
+           opacity: 0.8;
+           text-decoration: none;
+        transition:  0.5s linear;
+           
+        }
+
+        .sort-item{
+          text-align: right;
+        }
+        @media (max-width: 768px ) { 
+          .sort-item{
+          text-align: center;
+        }
+          .text-sort{
+            display: none;
+          }
+         }
    
       </style>
        
