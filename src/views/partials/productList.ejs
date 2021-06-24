@@ -1,10 +1,12 @@
 <section class="new">
     <div class="container">
       <h1 ><a id="newIn">MY MENU</a></h1>
-      <div class="mb-2  sort-item"> <span class="text-sort">Sắp xếp theo </span>
+      <div class="mb-2  sort-item"> 
         <button class="btn btn-sort"><a href="/sortByNameA_Z">Từ A-Z</a> </button>
         <button class="btn btn-sort"><a href="/sortByNameZ_A">Từ Z-A</a></button>
-        <button class="btn btn-sort"><a href="/sortByYear">Mới Nhất</a> </button>
+        <button class="btn btn-sort"><a href="/sortByYearDec">Mới Nhất</a> </button>
+        <button class="btn btn-sort"><a href="/sortByYearIncs">Cũ Nhất</a> </button>
+
 
       </div>
      
@@ -29,6 +31,7 @@
                     </div>
                   </div>
                   <h4 class="text-center"><%= data.name%></h4>
+              
                   <p class="text-center"><%= data.category.name%> </p>
 
                 </div>

@@ -11,7 +11,9 @@ router.post('/product-detail?:key', layoutController.comment)
 router.get('/products', layoutController.get_all_products)
 router.get('/products/decrease', layoutController.get_all_products_sort_by_decrease)
 router.get('/products/increase', layoutController.get_all_products_sort_by_increase)
-router.get('/products/year', layoutController.get_all_products_sort_by_year)
+router.get('/products/yearIncs', layoutController.get_all_products_sort_by_year_increase)
+router.get('/products/yearDec', layoutController.get_all_products_sort_by_year_decrease)
+
 router.get('/:slug', layoutController.error)
 
 

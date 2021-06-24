@@ -5,7 +5,9 @@ const siteConstroller = require('../controllers/siteController')
 router.get('/search', siteConstroller.search)
 router.get('/sortByNameA_Z',siteConstroller.sortByNameAZ);
 router.get('/sortByNameZ_A',siteConstroller.sortByNameZA);
-router.get('/sortByYear',siteConstroller.sortByYear);
+router.get('/sortByYearDec',siteConstroller.sortByYearDec);
+router.get('/sortByYearIncs',siteConstroller.sortByYearIncs);
+
 
 
 router.get('/:slug', siteConstroller.error)

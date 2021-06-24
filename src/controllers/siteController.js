@@ -34,9 +34,18 @@ class siteController {
             .catch(next)
 
     }
-    sortByYear(req, res, next) {
+    sortByYearIncs(req, res, next) {
         Product
             .find({deletedAt:null}).sort( { year: 1 } )
+            .then(products => res.render('main', {
+                products: multipleMongooseToObject(products)
+            }))
+            .catch(next)
+
+    }
+    sortByYearDec(req, res, next) {
+        Product
+            .find({deletedAt:null}).sort( { year: -1 } )
             .then(products => res.render('main', {
                 products: multipleMongooseToObject(products)
             }))

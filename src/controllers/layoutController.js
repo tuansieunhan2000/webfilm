@@ -100,7 +100,39 @@ class layoutController{
             .catch(next)
 
     }
-    get_all_products_sort_by_year(req,res,next){ 
+    get_all_products_sort_by_year_increase(req,res,next){ 
+        Product
+            .find({detetedAt:null}).sort( { year: 1 } )
+            .then(products => {
+                let countArrCate=[], nameArrCate=[]
+                if(products!=""){
+                    products.forEach(element => {
+                        let cateid = 1
+                        countArrCate.forEach( number => {
+                            if(number==element.category.id){
+                                cateid=0
+                            }
+                        })
+                        if(cateid==1){
+                            countArrCate.push(element.category.id)
+                            nameArrCate.push(element.category.name)
+                        }
+                    })
+                }
+                let data = Object.values(products)
+                let product_arr =[]
+                for (let product of data) {
+                    product_arr.push(product)
+                }
+                res.render('layouts/Products', {
+                    products: multipleMongooseToObject(product_arr),countArrCate,nameArrCate
+                })
+            })
+            .catch(next)
+
+    }
+
+    get_all_products_sort_by_year_decrease(req,res,next){ 
         Product
             .find({detetedAt:null}).sort( { year: -1 } )
             .then(products => {
@@ -131,7 +163,6 @@ class layoutController{
             .catch(next)
 
     }
-
 
  //     [GET] /layout/detail/....
  show_detail(req,res,next){
