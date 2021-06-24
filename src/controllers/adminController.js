@@ -185,7 +185,7 @@ class adminController {
                         name:categoryName,
                     },
                     name: req.body.name,
-                    id: req.body.id,
+                   
                     vn_name:req.body.vn_name,
                     description: req.body.description,
                     url: req.body.url,
@@ -268,7 +268,7 @@ productUpdate(req, res, next) {
                     data = pr
                     data.category.id = getcate.id
                     data.category.name = getcate.name
-                    data.id = req.body.id
+                    
                     data.name = req.body.name
                     data.vn_name = req.body.vn_name
                     data.ending = req.body.ending
