@@ -1,24 +1,45 @@
 <script type="text/javascript" src="/../js/jquery.min.js"></script>
 <script type="text/javascript" src="/../js/jquery.simplePagination.js"></script>
 <section class="py-3 allProduct">
-
     <div class="container py-4">
         <div class="row">
             <div class="col-md-3">
                 <!-- Tabs nav -->
-                <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <div
+                    class="nav flex-column nav-pills nav-pills-custom"
+                    id="v-pills-tab"
+                    role="tablist"
+                    aria-orientation="vertical"
+                >
+                    <a
+                        class="nav-link mb-2 shadow active"
+                        id="v-pills-all-tab"
+                        data-toggle="pill"
+                        href="#v-pills-all"
+                        role="tab"
+                        aria-controls="v-pills-all"
+                        aria-selected="true"
+                    >
+                        <span class="font-weight-bold small text-uppercase" style="color: #3a6073"
+                            >List Films</span
+                        ></a
+                    >
 
-                    <a class="nav-link mb-2 shadow active" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="true">
-                        <span class="font-weight-bold small text-uppercase" style="color:#3a6073;">List Films</span></a>
-                        
-                    <% var count=0 %> 
-                    <%countArrCate.forEach(function(data) { %>
-                        <a class="nav-link mb-2 shadow" id="v-<%=data %>-tab" data-toggle="pill" href="#v-<%=data %>" role="tab" aria-controls="v-<%=data %>" aria-selected="false">
-                            <span class="font-weight-bold small text-uppercase" style="color:#3a6073;"><%= nameArrCate[count]%></span>
-                        </a>
-                        <% count++ %>
-                        
-                    <% }) %> 
+                    <% var count=0 %> <%countArrCate.forEach(function(data) { %>
+                    <a
+                        class="nav-link mb-2 shadow"
+                        id="v-<%=data %>-tab"
+                        data-toggle="pill"
+                        href="#v-<%=data %>"
+                        role="tab"
+                        aria-controls="v-<%=data %>"
+                        aria-selected="false"
+                    >
+                        <span class="font-weight-bold small text-uppercase" style="color: #3a6073"
+                            ><%= nameArrCate[count]%></span
+                        >
+                    </a>
+                    <% count++ %> <% }) %>
                 </div>
             </div>
 
@@ -26,71 +47,99 @@
                 <!-- Tabs content -->
                 <div class="tab-content" id="v-pills-tabContent">
                     <!--  -->
-                    <div class="tab-pane fade shadow rounded bg-white show active p-4" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+                    <div
+                        class="tab-pane fade shadow rounded bg-white show active p-4"
+                        id="v-pills-all"
+                        role="tabpanel"
+                        aria-labelledby="v-pills-all-tab"
+                    >
                         <h4 class="font-italic mb-4">List Films</h4>
-                        <div class="mb-2  sort-item"> 
-                            <button class="btn btn-sort"><a href="/layout/products/increase">Từ A-Z</a> </button>
-                            <button class="btn btn-sort"><a href="/layout/products/decrease">Từ Z-A</a></button>
-                            <button class="btn btn-sort"><a href="/layout/products/yearIncs">Cũ Nhất</a> </button>
-                            <button class="btn btn-sort"><a href="/layout/products/yearDec">Mới Nhất</a> </button>
-
-                    
-                          </div>
+                        <div class="mb-2 sort-item">
+                            <button class="btn btn-sort">
+                                <a href="/layout/products/increase">Từ A-Z</a>
+                            </button>
+                            <button class="btn btn-sort">
+                                <a href="/layout/products/decrease">Từ Z-A</a>
+                            </button>
+                            <button class="btn btn-sort">
+                                <a href="/layout/products/yearIncs">Cũ Nhất</a>
+                            </button>
+                            <button class="btn btn-sort">
+                                <a href="/layout/products/yearDec">Mới Nhất</a>
+                            </button>
+                        </div>
                         <div class="row list-wrapper">
                             <%products.forEach(function(data) { %>
 
                             <div class="col-lg-4 col-sm-6 col-xs-12 list-item">
                                 <div class="item" href="#">
-                                    <div class="img-hover-zoom " >  
-                                          <img src="/../img/<%=data.image%>" class="w-80" alt="This zooms-in really well and smooth">
+                                    <div class="img-hover-zoom">
+                                        <img
+                                            src="/../img/<%=data.image%>"
+                                            class="w-80"
+                                            alt="This zooms-in really well and smooth"
+                                        />
                                     </div>
                                     <div class="content text-center">
-                                    <span class="name"><%=data.name%></span>
-                                 
-                                    <p><%=data.category.name%></p>
+                                        <span class="name"><%=data.name%></span>
 
-                                    <button class="button "><a href="/layout/product-detail/?key=<%=data._id%>" style=" text-decoration: none ;color:#3a6073;" >Xem phim </a></button>
-                                </div>
+                                        <p><%=data.vn_name%></p>
+
+                                        <button class="button">
+                                            <a
+                                                href="/layout/product-detail/?key=<%=data._id%>"
+                                                style="text-decoration: none; color: #3a6073"
+                                                >Xem phim
+                                            </a>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            <% }); %>       
-
+                            <% }); %>
                         </div>
-                        <div id="pagination-container" ></div>
+                        <div id="pagination-container"></div>
                     </div>
                     <% var count = 0; countArrCate.forEach(elementArrCate => { %>
-                         
-                        <div class="tab-pane fade shadow rounded bg-white p-4" id="v-<%=elementArrCate%>" role="tabpanel" aria-labelledby="v-<%=elementArrCate%>-tab">
-                            <h4 class="font-italic mb-4"><%= nameArrCate[count]%></h4>
-                            
-                            <div class="row ">
 
-                                <%products.forEach(function(data) { %>
-                                    <% if(data.category.id == elementArrCate){ %>
-                                        <!--  -->
-                                        <div class="col-lg-4 col-sm-6 col-xs-12 ">
-                                            <div class="item" href="#">
-                                                <div class="img-hover-zoom " >  
-                                                    <img src="/../img/<%=data.image%>" class="w-80" alt="This zooms-in really well and smooth">
-                                                </div>
-                                                <div class="content text-center">
-                                                <span class="name"><%=data.name%></span>
-                                                <p><%=data.category.name%></p>
+                    <div
+                        class="tab-pane fade shadow rounded bg-white p-4"
+                        id="v-<%=elementArrCate%>"
+                        role="tabpanel"
+                        aria-labelledby="v-<%=elementArrCate%>-tab"
+                    >
+                        <h4 class="font-italic mb-4"><%= nameArrCate[count]%></h4>
 
-                                                <button class="button text-dark"><a href="/layout/product-detail/?key=<%=data._id%>" style="color:#3a6073; text-decoration: none ;">Xem phim</a></button>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    <% } %>
+                        <div class="row">
+                            <%products.forEach(function(data) { %> <% if(data.category.id ==
+                            elementArrCate){ %>
+                            <!--  -->
+                            <div class="col-lg-4 col-sm-6 col-xs-12">
+                                <div class="item" href="#">
+                                    <div class="img-hover-zoom">
+                                        <img
+                                            src="/../img/<%=data.image%>"
+                                            class="w-80"
+                                            alt="This zooms-in really well and smooth"
+                                        />
+                                    </div>
+                                    <div class="content text-center">
+                                        <span class="name"><%=data.name%></span>
+                                        <p><%=data.vn_name%></p>
 
-                                <% }); %> 
-
+                                        <button class="button text-dark">
+                                            <a
+                                                href="/layout/product-detail/?key=<%=data._id%>"
+                                                style="color: #3a6073; text-decoration: none"
+                                                >Xem phim</a
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-
-                          
+                            <% } %> <% }); %>
                         </div>
-                        <% count++ %> 
-                    <% }); %>
+                    </div>
+                    <% count++ %> <% }); %>
                     <!--  -->
                 </div>
                 <!-- end tab content -->
@@ -99,46 +148,49 @@
     </div>
 </section>
 <style>
-
-
     .simple-pagination ul {
         margin: 0 0 20px;
         padding: 0;
         list-style: none;
         text-align: center;
     }
-    
+
     .simple-pagination li {
         display: inline-block;
         margin-right: 5px;
     }
-    
+
     .simple-pagination li a,
     .simple-pagination li span {
         color: #666;
         padding: 5px 10px;
         text-decoration: none;
-        border: 1px solid #EEE;
-        background-color: #FFF;
-        box-shadow: 0px 0px 10px 0px #EEE;
+        border: 1px solid #eee;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px 0px #eee;
     }
-    
+
     .simple-pagination .current {
-        color: #3A6073;
-      background: linear-gradient(230deg, rgba(245,159,159,1) 0%, rgba(247,193,155,1) 19%, rgba(255,254,148,1) 39%, rgba(171,246,155,1) 60%, rgba(143,245,255,1) 81%, rgba(228,147,227,1) 100%);
-    font-weight: 600;
+        color: #3a6073;
+        background: linear-gradient(
+            230deg,
+            rgba(245, 159, 159, 1) 0%,
+            rgba(247, 193, 155, 1) 19%,
+            rgba(255, 254, 148, 1) 39%,
+            rgba(171, 246, 155, 1) 60%,
+            rgba(143, 245, 255, 1) 81%,
+            rgba(228, 147, 227, 1) 100%
+        );
+        font-weight: 600;
     }
-    
+
     .simple-pagination .prev.current,
     .simple-pagination .next.current {
-    
-    color: #3A6073;
-    font-weight: 600;
-    
-    
+        color: #3a6073;
+        font-weight: 600;
     }
     .btn-sort {
-      box-shadow: none;
+        box-shadow: none;
         border-radius: 9999px;
         font-size: 0.75rem;
         font-weight: 300;
@@ -146,69 +198,66 @@
         transition: 0.6s all;
         opacity: 0.8;
         margin: 0px 5px 0 5px;
-        background: #FFF;
+        background: #fff;
         transition: background 0.5s ease;
-   
-      }
-      .btn-sort:hover{
-        background: linear-gradient(230deg, rgba(245,159,159,1) 0%, rgba(247,193,155,1) 19%, rgba(255,254,148,1) 39%, rgba(171,246,155,1) 60%, rgba(143,245,255,1) 81%, rgba(228,147,227,1) 100%);
-        transition:  0.5s linear;
+    }
+    .btn-sort:hover {
+        background: linear-gradient(
+            230deg,
+            rgba(245, 159, 159, 1) 0%,
+            rgba(247, 193, 155, 1) 19%,
+            rgba(255, 254, 148, 1) 39%,
+            rgba(171, 246, 155, 1) 60%,
+            rgba(143, 245, 255, 1) 81%,
+            rgba(228, 147, 227, 1) 100%
+        );
+        transition: 0.5s linear;
         opacity: 1;
-        
-      }
-      .btn-sort a {
-        color:#3a6073;
-           font-size: 16px;
-           text-decoration: none;
-           font-weight: 500;
-        transition:  0.5s linear;
-           
-        }
-        .btn-sort a:hover {
-           opacity: 0.8;
-           text-decoration: none;
-        transition:  0.5s linear;
-           
-        }
+    }
+    .btn-sort a {
+        color: #3a6073;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.5s linear;
+    }
+    .btn-sort a:hover {
+        opacity: 0.8;
+        text-decoration: none;
+        transition: 0.5s linear;
+    }
 
-        .sort-item{
-          text-align: right;
+    .sort-item {
+        text-align: right;
+    }
+    @media (max-width: 768px) {
+        .sort-item {
+            text-align: center;
         }
-        @media (max-width: 768px ) { 
-          .sort-item{
-          text-align: center;
-        }
-          .text-sort{
+        .text-sort {
             display: none;
-          }
-         }
-   
-      </style>
-       
-      <script>
-        var items = $(".list-wrapper .list-item");
-        var items1 = $(".list-wrapper1 .list-item1");
+        }
+    }
+</style>
 
+<script>
+    var items = $(".list-wrapper .list-item");
+    var items1 = $(".list-wrapper1 .list-item1");
 
-        var numItems = items.length;
-        var perPage = 12;
-    
-    
-        items.slice(perPage).hide();
- 
+    var numItems = items.length;
+    var perPage = 12;
 
-    
-        $('#pagination-container').pagination({
-            items: numItems,
-            itemsOnPage: perPage,
-            prevText: "&laquo;",
-            nextText: "&raquo;",
-            onPageClick: function (pageNumber) {
-                var showFrom = perPage * (pageNumber - 1);
-                var showTo = showFrom + perPage;
-                items.hide().slice(showFrom, showTo).show();
-            }
-        });
-       
-      </script>
-    
+    items.slice(perPage).hide();
+
+    $("#pagination-container").pagination({
+        items: numItems,
+        itemsOnPage: perPage,
+        prevText: "&laquo;",
+        nextText: "&raquo;",
+        onPageClick: function (pageNumber) {
+            var showFrom = perPage * (pageNumber - 1);
+            var showTo = showFrom + perPage;
+            items.hide().slice(showFrom, showTo).show();
+        },
+    });
+</script>
