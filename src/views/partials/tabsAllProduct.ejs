@@ -56,13 +56,13 @@
                         <h4 class="font-italic mb-4">List Films</h4>
                         <div class="mb-2 sort-item">
                             <button class="btn btn-sort">
-                                <a href="/layout/products/increase">Từ A-Z</a>
+                                <a href="/layout/products/increase">Sort EN</a>
                             </button>
                             <button class="btn btn-sort">
-                                <a href="/layout/products/decrease">Từ Z-A</a>
+                                <a href="/layout/products/decrease">Sort VN</a>
                             </button>
                             <button class="btn btn-sort">
-                                <a href="/layout/products/yearIncs">Cũ Nhất</a>
+                                <a href="/layout/products/yearIncs">Ranking</a>
                             </button>
                             <button class="btn btn-sort">
                                 <a href="/layout/products/yearDec">Mới Nhất</a>
@@ -84,6 +84,9 @@
                                         <span class="name"><%=data.name%></span>
 
                                         <p><%=data.vn_name%></p>
+                                        <p class="name" style="font-size: 10px"
+                                            >Năm :<%=data.year%></p
+                                        >
 
                                         <button class="button">
                                             <a

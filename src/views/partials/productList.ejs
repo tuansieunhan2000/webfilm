@@ -1,90 +1,96 @@
 <section class="new">
     <div class="container">
-      <h1 ><a id="newIn">MY MENU</a></h1>
-      <div class="mb-2  sort-item"> 
-        <button class="btn btn-sort"><a href="/sortByNameA_Z">Từ A-Z</a> </button>
-        <button class="btn btn-sort"><a href="/sortByNameZ_A">Từ Z-A</a></button>
-        <button class="btn btn-sort"><a href="/sortByYearDec">Mới Nhất</a> </button>
-        <button class="btn btn-sort"><a href="/sortByYearIncs">Cũ Nhất</a> </button>
+        <h1><a id="newIn">MY MENU</a></h1>
+        <div class="mb-2 sort-item">
+            <button class="btn btn-sort"><a href="/sortByNameA_Z">Sort EN</a></button>
+            <button class="btn btn-sort"><a href="/sortByNameZ_A">Sort VN</a></button>
+            <button class="btn btn-sort"><a href="/sortByYearDec">Mới Nhất</a></button>
+            <button class="btn btn-sort"><a href="/sortByYearIncs">Ranking</a></button>
+        </div>
 
-
-      </div>
-     
-      <div class="row list-wrapper">
-        
-        <% if(products.length==0){%>
-          <div class="mb-5">Không tìm thấy sản phẩm nào!</div>
-          <%} else{%>
-            <%products.forEach(function(data) { %>
-              <div class="col-md-3 col-sm-6 col-xs-12 list-item">
+        <div class="row list-wrapper">
+            <% if(products.length==0){%>
+            <div class="mb-5">Không tìm thấy sản phẩm nào!</div>
+            <%} else{%> <%products.forEach(function(data) { %>
+            <div class="col-md-3 col-sm-6 col-xs-12 list-item">
                 <div class="item mb-5">
-                  <div class="img position-relative overflow-hidden content-hover">
-                    <img class="w-100" src="/./img/<%= data.image %>" />
-                    <div
-                      class="info d-flex justify-content-center align-items-center flex-column position-absolute text-white"
-                    >
-                  
-                      <a class="d-block mt-3 mb-2 text-white text-decoration-none"  
-                       id="<%=data.id%>" href="layout/product-detail/?key=<%=data._id%>" >Xem phim</a
-                      >
-                      
+                    <div class="img position-relative overflow-hidden content-hover">
+                        <img class="w-100" src="/./img/<%= data.image %>" />
+                        <div
+                            class="
+                                info
+                                d-flex
+                                justify-content-center
+                                align-items-center
+                                flex-column
+                                position-absolute
+                                text-white
+                            "
+                        >
+                            <a
+                                class="d-block mt-3 mb-2 text-white text-decoration-none"
+                                id="<%=data.id%>"
+                                href="layout/product-detail/?key=<%=data._id%>"
+                                >Xem phim</a
+                            >
+                        </div>
                     </div>
-                  </div>
-                  <h4 class="text-center"><%= data.name%></h4>
-              
-                  <p class="text-center"><%= data.vn_name%> </p>
+                    <h4 class="text-center"><%= data.name%></h4>
 
+                    <p class="text-center"><%= data.vn_name%></p>
+                    <p class="text-center"><%= data.year%></p>
                 </div>
-              </div>
-              <% }); %>
-        <%}%>   
-      </div>
-      <div id="pagination-container" style=" display: block;"></div>
-
+            </div>
+            <% }); %> <%}%>
+        </div>
+        <div id="pagination-container" style="display: block"></div>
     </div>
-  </section>
-  <style>
+</section>
+<style>
+    .simple-pagination ul {
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
 
+    .simple-pagination li {
+        display: inline-block;
+        margin-right: 5px;
+    }
 
-.simple-pagination ul {
-	margin: 0 0 20px;
-	padding: 0;
-	list-style: none;
-	text-align: center;
-}
+    .simple-pagination li a,
+    .simple-pagination li span {
+        color: #666;
+        padding: 5px 10px;
+        text-decoration: none;
+        border: 1px solid #eee;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px 0px #eee;
+    }
 
-.simple-pagination li {
-	display: inline-block;
-	margin-right: 5px;
-}
+    .simple-pagination .current {
+        color: #3a6073;
+        background: linear-gradient(
+            230deg,
+            rgba(245, 159, 159, 1) 0%,
+            rgba(247, 193, 155, 1) 19%,
+            rgba(255, 254, 148, 1) 39%,
+            rgba(171, 246, 155, 1) 60%,
+            rgba(143, 245, 255, 1) 81%,
+            rgba(228, 147, 227, 1) 100%
+        );
+        font-weight: 600;
+    }
 
-.simple-pagination li a,
-.simple-pagination li span {
-	color: #666;
-	padding: 5px 10px;
-	text-decoration: none;
-	border: 1px solid #EEE;
-	background-color: #FFF;
-	box-shadow: 0px 0px 10px 0px #EEE;
-}
+    .simple-pagination .prev.current,
+    .simple-pagination .next.current {
+        color: #3a6073;
+        font-weight: 600;
+    }
 
-.simple-pagination .current {
-	color: #3A6073;
-  background: linear-gradient(230deg, rgba(245,159,159,1) 0%, rgba(247,193,155,1) 19%, rgba(255,254,148,1) 39%, rgba(171,246,155,1) 60%, rgba(143,245,255,1) 81%, rgba(228,147,227,1) 100%);
-font-weight: 600;
-}
-
-.simple-pagination .prev.current,
-.simple-pagination .next.current {
-
-color: #3A6073;
-font-weight: 600;
-
-
-}
-
-.btn-sort {
-      box-shadow: none;
+    .btn-sort {
+        box-shadow: none;
         border-radius: 9999px;
         font-size: 0.75rem;
         font-weight: 300;
@@ -92,53 +98,57 @@ font-weight: 600;
         transition: 0.6s all;
         opacity: 0.8;
         margin: 0px 5px 0 5px;
-        background: #FFF;
+        background: #fff;
         transition: background 0.5s ease;
-   
-      }
-      .btn-sort:hover{
-        background: linear-gradient(230deg, rgba(245,159,159,1) 0%, rgba(247,193,155,1) 19%, rgba(255,254,148,1) 39%, rgba(171,246,155,1) 60%, rgba(143,245,255,1) 81%, rgba(228,147,227,1) 100%);
-        transition:  0.5s linear;
+    }
+    .btn-sort:hover {
+        background: linear-gradient(
+            230deg,
+            rgba(245, 159, 159, 1) 0%,
+            rgba(247, 193, 155, 1) 19%,
+            rgba(255, 254, 148, 1) 39%,
+            rgba(171, 246, 155, 1) 60%,
+            rgba(143, 245, 255, 1) 81%,
+            rgba(228, 147, 227, 1) 100%
+        );
+        transition: 0.5s linear;
         opacity: 1;
-        
-      }
-      .btn-sort a {
-        color:#3a6073;
-           font-size: 16px;
-           text-decoration: none;
-           font-weight: 500;
-        transition:  0.5s linear;
-           
-        }
-        .btn-sort a:hover {
-           opacity: 0.8;
-           text-decoration: none;
-        transition:  0.5s linear;
-           
-        }
+    }
+    .btn-sort a {
+        color: #3a6073;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.5s linear;
+    }
+    .btn-sort a:hover {
+        opacity: 0.8;
+        text-decoration: none;
+        transition: 0.5s linear;
+    }
 
-        .sort-item{
-          text-align: right;
+    .sort-item {
+        text-align: right;
+    }
+    @media (max-width: 600px) {
+        .sort-item {
+            text-align: center;
         }
-        @media (max-width: 600px ) { 
-          .sort-item{
-          text-align: center;
-        }
-          .text-sort{
+        .text-sort {
             display: none;
-          }
-         }
-  </style>
-    <script type="text/javascript" src="./js/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/jquery.simplePagination.js"></script>
-  <script>
+        }
+    }
+</style>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.simplePagination.js"></script>
+<script>
     var items = $(".list-wrapper .list-item");
     var numItems = items.length;
     var perPage = 20;
 
     items.slice(perPage).hide();
 
-    $('#pagination-container').pagination({
+    $("#pagination-container").pagination({
         items: numItems,
         itemsOnPage: perPage,
         prevText: "&laquo;",
@@ -147,6 +157,6 @@ font-weight: 600;
             var showFrom = perPage * (pageNumber - 1);
             var showTo = showFrom + perPage;
             items.hide().slice(showFrom, showTo).show();
-        }
+        },
     });
-  </script>
+</script>
